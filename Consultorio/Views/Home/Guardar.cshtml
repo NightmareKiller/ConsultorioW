@@ -1,0 +1,40 @@
+﻿@model Consultorio.Models.Paciente
+
+
+<h2>Guardhgcvhgar</h2>
+@using (Html.BeginForm("Guardar", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.Cedula > 0)
+    {
+        @Html.HiddenFor(a => a.Cedula)
+    }
+
+    <div class="form-group">
+        <label>Cedula</label>
+        @Html.TextBoxFor(a => a.Cedula, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Cedula)
+    </div>
+    <div class="form-group">
+        <label>Nombre</label>
+        @Html.TextBoxFor(a => a.nombre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.nombre)
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        @Html.TextBoxFor(a => a.apellido, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.apellido)
+    </div>
+    <div class="form-group">
+        <label>Fecha de Nacimiento</label>
+        @Html.TextBoxFor(a => a.fecha, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.fecha)
+    </div>
+    <div class="form-group">
+        <label>Tipo de Sangre</label>
+        @Html.TextBoxFor(a => a.sangre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.sangre)
+    </div>
+    <div >
+        <input type="submit" value="Guardar"/>
+    </div>
+}

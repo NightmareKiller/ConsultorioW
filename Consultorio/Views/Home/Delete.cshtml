@@ -1,0 +1,31 @@
+﻿@model Consultorio.Models.Paciente
+
+<h2>Borrar</h2>
+@using (Html.BeginForm("Delete", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.Cedula)
+    <div class="form-group">
+        <label>Cedula</label>
+        <p>@Model.Cedula</p>
+    </div>
+    <div class="form-group">
+        <label>Nombre</label>
+        <p>@Model.nombre</p>
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <p>@Model.apellido</p>
+    </div>
+    <div class="form-group">
+        <label>Fecha de Nacimiento</label>
+        <p>@Model.fecha</p>
+    </div>
+    <div class="form-group">
+        <label>Tipo de Sangre</label>
+        <p>@Model.sangre</p>
+    </div>
+    <div>
+        <input type="submit" value="Borrar"/>
+    </div>
+}
+
